@@ -1,0 +1,20 @@
+<header>
+  <%= image_tag 'VGSLogo.jpg' %>
+  <nav>
+    <ul>
+      <li>
+        <%= link_to 'Home' , finder_index_path%>
+      </li>
+      <li>
+        <%= link_to 'View Products' ,product_index_path%>
+      </li>
+      <li>
+        <%= form_tag("/search", method: "get") do %>
+          <%= label_tag(:mainSearch, "Search for:") %>
+          <%= text_field_tag(:mainSearch) %>
+          <%= submit_tag("Search") %>
+        <% end %>
+      </li>
+    </ul>
+  </nav>
+</header>

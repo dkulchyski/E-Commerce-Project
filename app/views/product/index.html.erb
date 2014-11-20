@@ -1,0 +1,17 @@
+<h1>All products currently in stock!</h1>
+<nav class="productList">
+  <ul>
+      <% @products_in_stock.each do |product| %>
+        <li>
+          <%= image_tag product.image %>
+          <div class="info">
+            <div class="title">Title: <%= link_to product.name, product%></div>
+            <div class="description">Description:</br><%= product.description %></div>
+            <div class="category">Category:<%= product.category.name %></div>
+          </div>
+        </li>
+          
+      <% end %>
+  </ul>
+</nav>
+

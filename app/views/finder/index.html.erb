@@ -5,7 +5,7 @@
     <% @newestProducts.each do |product| %>
       <li class="game">
         <%= image_tag product.image %>
-        <%= link_to product.name %>
+        <%= link_to product.name , product%>
       </li>
     <% end %>
   </ul>
