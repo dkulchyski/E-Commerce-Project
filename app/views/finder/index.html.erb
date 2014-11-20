@@ -1,9 +1,12 @@
 <h1>Welcome to the website!</h1>
-<div class="logo"><%= link_image_to 'VGSLogo.jpg'%></div>
 
-<% @products.each do |product| %>
-  <div class="game">
-    <p><%= image_tag product.image %></p>
-    <p><%= product.name %></p>
-  </div>
-<% end %>
+<nav class="newestProducts">
+  <ul>
+    <% @newestProducts.each do |product| %>
+      <li class="game">
+        <%= image_tag product.image %>
+        <%= link_to product.name %>
+      </li>
+    <% end %>
+  </ul>
+</nav>
