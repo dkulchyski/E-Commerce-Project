@@ -1,0 +1,9 @@
+<h1>Welcome to the website!</h1>
+<div class="logo"><%= link_image_to 'VGSLogo.jpg'%></div>
+
+<% @products.each do |product| %>
+  <div class="game">
+    <p><%= image_tag product.image %></p>
+    <p><%= product.name %></p>
+  </div>
+<% end %>
