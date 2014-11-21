@@ -1,8 +1,22 @@
-<h1>Welcome to the website!</h1>
+<h1>Our 4 newest Games</h1>
 
-<nav class="newestProducts">
+<nav class="frontPageList">
   <ul>
     <% @newestProducts.each do |product| %>
+      <li class="game">
+        <%= image_tag product.image %>
+        <%= link_to product.name , product%>
+      </li>
+    <% end %>
+  </ul>
+</nav>
+
+</br>
+</br>
+
+<nav class="frontPageList">
+  <ul>
+    <% @greatProducts.each do |product| %>
       <li class="game">
         <%= image_tag product.image %>
         <%= link_to product.name , product%>

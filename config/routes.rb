@@ -7,6 +7,4 @@ Rails.application.routes.draw do
   resources :category
   
   root to: 'finder#index'
-  
-  
 end
