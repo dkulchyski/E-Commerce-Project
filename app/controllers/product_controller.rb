@@ -9,8 +9,9 @@ class ProductController < ApplicationController
   end
   
   def search
-    #search stuff here
-    @products = Product.where(name: params[:main_search])
+    #search stuff here.
+    wildcard_keywords = '%' + params[:main_search] + '%'
+    @products = Product.where("name LIKE ?",wildcard_keywords)
   end
   #View app/view/product/search.html.erb
   
