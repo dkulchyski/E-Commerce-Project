@@ -6,5 +6,7 @@ Rails.application.routes.draw do
   resources :finder
   resources :category
   
+  get 'search' => 'product#search', as: 'search_results'
+  
   root to: 'finder#index'
 end

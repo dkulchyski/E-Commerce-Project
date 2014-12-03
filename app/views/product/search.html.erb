@@ -1,0 +1,13 @@
+<h2>Search Results for '<%= params[:main_search]%>'</h2>
+
+<nav class="productList">
+  <ul>
+    <% if @products.size.zero? %>
+      <p>No products found.</p>
+    <% else %>
+      <p><%= pluralize(@products.size,'Product') %> found.</p>
+      <%= render partial: 'product',
+              collection: @products %>
+    <% end %>
+  </ul>
+</nav>

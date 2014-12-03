@@ -1,5 +1,8 @@
 <p class="title">
+  <%= image_tag @product.image %>
   <%= @product.name %>
+  <%= @product.description %>
+  <%= @product.category.name %>
 </p>
 
 <%= link_to 'Back', product_path %>

@@ -9,10 +9,12 @@
         <%= link_to 'View Products' ,product_index_path%>
       </li>
       <li>
-        <%= form_tag("/search", method: "get") do %>
-          <%= label_tag(:mainSearch, "Search for:") %>
-          <%= text_field_tag(:mainSearch) %>
-          <%= submit_tag("Search") %>
+        <%= link_to 'View Categories' ,category_index_path%>
+      </li>
+      <li>
+        <%= form_tag search_results_path, method: :get do %>
+          <%= text_field_tag :main_search %>
+          <%= submit_tag 'Search' %>
         <% end %>
       </li>
     </ul>

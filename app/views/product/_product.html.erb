@@ -1,0 +1,8 @@
+<li>
+  <%= image_tag product.image %>
+  <div class="info">
+    <div class="title">Title: <%= link_to product.name, product%></div>
+    <div class="description">Description:</br><%= product.description %></div>
+    <div class="category">Category:<%= product.category.name %></div>
+  </div>
+</li>

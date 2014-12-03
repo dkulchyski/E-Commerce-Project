@@ -1,5 +1,11 @@
-<p class="title">
-  <%= @category.name %>
-</p>
+<h1 class="title">
+  <%= @category.name %>:
+</h1>
 
-<%= link_to 'Back', category_path %>
+<nav class="productList">
+  <ul>
+    <%= render partial: 'product/product',
+               collection: @products %>
+  </ul>
+</nav>
+<%= link_to 'Back', category_index_path %>
