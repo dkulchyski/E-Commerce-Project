@@ -12,7 +12,17 @@ class ProductController < ApplicationController
     #search stuff here.
     wildcard_keywords = '%' + params[:main_search] + '%'
     @products = Product.where("name LIKE ?",wildcard_keywords)
+    @categories = Category.where("name LIKE ?",wildcard_keywords)
+    
+    @categories.each do |category|
+      @products += category.products
+    end
+    @products = @products.uniq
   end
-  #View app/view/product/search.html.erb
+  private
+    def duplicateProductRemove(products)
+      
+      
+    end
   
 end
