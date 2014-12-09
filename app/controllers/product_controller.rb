@@ -1,7 +1,7 @@
 class ProductController < ApplicationController
   
   def index
-    @products_in_stock = Product.where("stock_quantity > 0")
+    @products_in_stock = Product.where("stock_quantity > 0").order("name").page(params[:page]).per(5)
   end
   
   def show
@@ -12,6 +12,7 @@ class ProductController < ApplicationController
     #search stuff here.
     wildcard_keywords = '%' + params[:main_search] + '%'
     @products = Product.where("name LIKE ?",wildcard_keywords)
+    @products += Product.where("description LIKE ?",wildcard_keywords)
     @categories = Category.where("name LIKE ?",wildcard_keywords)
     
     @categories.each do |category|
@@ -19,10 +20,5 @@ class ProductController < ApplicationController
     end
     @products = @products.uniq
   end
-  private
-    def duplicateProductRemove(products)
-      
-      
-    end
   
 end

@@ -27,6 +27,8 @@ gem 'sdoc', '~> 0.4.0',          group: :doc
 gem 'activeadmin', github: 'activeadmin'
 #devise gem
 gem 'devise'
+#paginating gem
+gem 'kaminari'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin]
