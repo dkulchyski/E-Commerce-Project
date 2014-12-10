@@ -1,4 +1,7 @@
 <h1>All products currently in stock!</h1>
+<p>
+  You Visitied this page <%= pluralize(@visit_count,"time") %>!
+</p>
 <nav class="productList">
   <ul>
     <%= render partial: 'product',
